@@ -246,7 +246,7 @@ const WINDOWS_LOADER_ENCODED = encodeCommand(WINDOWS_LOADER)
 
 let platform: Promise<Platform> | undefined
 let language: Promise<Lang> | undefined
-let configuredLanguage = 'auto'
+let configuredLanguage = 'en'
 let contextWarning = 80
 let contextWarned = 0
 let permissionButtons = true
@@ -520,7 +520,7 @@ async function runCommand($: EngineInterface, args: string): Promise<string> {
 }
 
 export const register: Register = (on, options) => {
-  configuredLanguage = typeof options.language === 'string' ? options.language : 'auto'
+  configuredLanguage = typeof options.language === 'string' ? options.language : 'en'
   contextWarning = typeof options.contextWarning === 'number' ? options.contextWarning : 80
   permissionButtons = options.permissionButtons !== false
 

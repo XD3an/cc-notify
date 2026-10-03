@@ -198,7 +198,7 @@ test('the language option picks the words', { options: { language: 'zh-TW' } }, 
   expect(shown[1]?.json?.meta).toBe('⏱ 2m 13s · 🔧 1 個工具 · ⎇ main')
 })
 
-test('auto follows LANG on macOS and Linux', async ($, on) => {
+test('auto follows LANG on macOS and Linux', { options: { language: 'auto' } }, async ($, on) => {
   const clock = mock.clock(on)
   const { shown } = world(on, { os: 'Linux', env: { LANG: 'ja_JP.UTF-8' } })
 
@@ -208,7 +208,7 @@ test('auto follows LANG on macOS and Linux', async ($, on) => {
   expect(shown[0]?.argv.at(-1)).toMatch(/^ターンがエラーで終了しました。/)
 })
 
-test('auto follows the Windows display language', async ($, on) => {
+test('auto follows the Windows display language', { options: { language: 'auto' } }, async ($, on) => {
   const clock = mock.clock(on)
   const { shown } = world(on, { culture: 'zh-TW' })
 
@@ -216,6 +216,16 @@ test('auto follows the Windows display language', async ($, on) => {
   await clock.settle()
 
   expect(shown[0]?.json?.body).toBe('這回合因為錯誤而結束了。')
+})
+
+test('English by default', async ($, on) => {
+  const clock = mock.clock(on)
+  const { shown } = world(on, { culture: 'zh-TW', env: { LANG: 'ja_JP.UTF-8' } })
+
+  await $.turn.complete({ ...turn, reason: 'error' })
+  await clock.settle()
+
+  expect(shown[0]?.json?.body).toBe('The turn ended with an error.')
 })
 
 // --- /notify ----------------------------------------------------------------

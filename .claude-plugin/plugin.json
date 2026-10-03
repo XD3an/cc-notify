@@ -18,7 +18,7 @@
       "type": "string",
       "title": "Language",
       "description": "Language of the notifications and /notify. auto follows your system language.",
-      "default": "auto",
+      "default": "en",
       "options": [
         "auto",
         "en",

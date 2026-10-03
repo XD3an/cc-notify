@@ -4,6 +4,8 @@ Animated desktop notifications for [Claude Code](https://code.claude.com/docs/en
 
 Nothing extra to install.
 
+![demo](demo/demo.png)
+
 ## Install
 
 ```
@@ -47,7 +49,7 @@ Set these in the `/plugin` menu.
 
 | Setting | Default | |
 | --- | --- | --- |
-| `language` | `auto` | Follows your system language |
+| `language` | `en` | `en`, `zh-TW`, `zh-CN`, `ja`, or `auto` to follow your system language |
 | `contextWarning` | `80` | Context % that triggers a warning; `0` turns it off |
 | `permissionButtons` | `true` | Allow / Deny on the Windows popup |
 
