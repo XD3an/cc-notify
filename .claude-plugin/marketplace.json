@@ -1,0 +1,19 @@
+{
+  "name": "cc-notify",
+  "description": "Animated desktop notifications for Claude Code.",
+  "owner": {
+    "name": "Dean",
+    "url": "https://github.com/XD3an"
+  },
+  "plugins": [
+    {
+      "name": "notify",
+      "source": "./",
+      "description": "Animated desktop notifications when a session starts, a long turn finishes, a tool fails, or Claude asks for permission. Nothing extra to install.",
+      "author": {
+        "name": "Dean",
+        "url": "https://github.com/XD3an"
+      }
+    }
+  ]
+}
