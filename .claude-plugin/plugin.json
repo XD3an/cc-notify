@@ -1,6 +1,6 @@
 {
   "name": "notify",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Animated desktop notifications when a session starts, a turn finishes, a tool fails, the context fills up, or Claude asks for permission. Nothing extra to install.",
   "author": {
     "name": "Dean",
